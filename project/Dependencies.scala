@@ -18,7 +18,7 @@ object Dependencies {
   lazy val akkaDeps = Seq(
     // Akka is provided because Spark already includes it, and Spark's version is shaded so it's not safe
     // to use this one
-    "com.typesafe.akka" %% "akka-slf4j" % "2.2.4" % "provided",
+    "com.typesafe.akka" %% "akka-slf4j" % "2.2.4",
     "io.spray" %% "spray-json" % "1.2.5",
     "io.spray" % "spray-can" % "1.2.1",
     "io.spray" % "spray-routing" % "1.2.1",
@@ -27,7 +27,7 @@ object Dependencies {
   ) ++ yodaDeps
 
   lazy val sparkDeps = Seq(
-    "org.apache.spark" %% "spark-core" % "1.1.0" % "provided" exclude("io.netty", "netty-all"),
+    "org.apache.spark" %% "spark-core" % "1.1.0" ,
     // Force netty version.  This avoids some Spark netty dependency problem.
     "io.netty" % "netty" % "3.6.6.Final"
   )
